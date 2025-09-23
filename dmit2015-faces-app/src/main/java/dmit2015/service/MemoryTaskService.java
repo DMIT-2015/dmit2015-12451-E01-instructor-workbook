@@ -8,7 +8,6 @@ import net.datafaker.Faker;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.random.RandomGenerator;
 
 @Named("memoryTaskService")
 @ApplicationScoped
@@ -20,15 +19,8 @@ public class MemoryTaskService implements TaskService {
     public void init() {
 
         var faker = new Faker();
-        var randomGenerator = RandomGenerator.getDefault();
-        String[] availablePriorities = new String[]{ "Low","Medium","High" };
         for (int counter = 1; counter <= 5; counter++) {
-            var currentTask = new Task();
-            currentTask.setId(UUID.randomUUID().toString());
-
-            currentTask.setDescription(faker.starWars().quotes());
-            currentTask.setPriority(availablePriorities[randomGenerator.nextInt(availablePriorities.length)]);
-
+            var currentTask = Task.of(faker);
             tasks.add(currentTask);
         }
 
