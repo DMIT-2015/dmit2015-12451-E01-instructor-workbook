@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import net.datafaker.Faker;
 
+import java.util.UUID;
 import java.util.random.RandomGenerator;
 
 @Data
@@ -31,6 +32,7 @@ public class Task {
         var randomGenerator = RandomGenerator.getDefault();
         String[] availablePriorities = new String[]{ "Low","Medium","High" };
         var currentTask = new Task();
+        currentTask.setId(UUID.randomUUID().toString());
         currentTask.setDescription(faker.starWars().quotes());
         currentTask.setPriority(availablePriorities[randomGenerator.nextInt(availablePriorities.length)]);
         return currentTask;
