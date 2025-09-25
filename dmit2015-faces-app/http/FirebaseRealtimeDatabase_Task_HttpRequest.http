@@ -1,0 +1,59 @@
+// Firebase Realtime Database stores JSON data in a JSON Tree structure
+
+### Push new JSON data to the path
+POST https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/Task.json
+Content-Type: application/json
+
+{
+  "propertyName1": "property1Value",
+  "propertyName2": "property2Value"
+}
+
+### Push new JSON data to the path
+POST https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/Task.json
+Content-Type: application/json
+
+{
+  "description": "Buy Coffee",
+  "priority": "Low",
+  "done": false
+}
+
+### Push new JSON data to the path
+POST https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/Task.json
+Content-Type: application/json
+
+{
+  "description": "Drink Coffee",
+  "priority": "Medium",
+  "done": true
+}
+
+### Read JSON data by path
+GET https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/Task.json
+
+### Read JSON data by path and primary key value
+@primaryKeyValue = -O_ydQbte0bR5uyV98LI
+GET https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/Task/{{primaryKeyValue}}.json
+
+### Write JSON data - will replace all properties with the properties in the request body - if you miss a property it will be removed
+PUT https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/Task/{{primaryKeyValue}}.json
+Content-Type: application/json
+
+{
+  "description": "Run Unit Test",
+  "priority": "Low",
+  "done": false
+}
+
+### Remove JSON data - use this if you want to delete data
+@deletePrimaryKeyValue = -O_ydf3GeCnIf3ddQnPU
+DELETE https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/Task/{{deletePrimaryKeyValue}}/description.json
+
+### Update data - use this if you want to update some of the properties but not all of them
+PATCH https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/Task/-O_ydleCd99o7yFvZkuv.json
+Content-Type: application/json
+
+{
+  "description": "Drink Water"
+}

@@ -1,0 +1,34 @@
+###
+# curl -X PUT -d '{ "first": "Jack", "last": "Sparrow" }'
+#  'https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/users/jack/name.json'
+PUT https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/users/jack/name.json
+Content-Type: application/json
+
+{ "first": "Jack", "last": "Sparrow" }
+
+###
+
+# curl -X POST -d '{"user_id" : "jack", "text" : "Ahoy!"}'
+#  'https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/message_list.json'
+POST https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/message_list.json
+Content-Type: application/json
+
+{"user_id" : "jack", "text" : "Ahoy!"}
+
+###
+# curl -X PATCH -d '{"last":"Jones"}'
+# 'https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/users/jack/name/.json'
+PATCH https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/users/jack/name/.json
+Content-Type: application/json
+
+{"last":"Jones"}
+
+###
+
+# curl -X DELETE
+#  'https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/users/jack/name/last.json'
+DELETE https://dmit2015-1251-swue01-default-rtdb.firebaseio.com/users/jack/name/last.json
+
+###
+
+
