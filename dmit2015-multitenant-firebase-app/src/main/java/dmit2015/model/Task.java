@@ -1,7 +1,5 @@
 package dmit2015.model;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import net.datafaker.Faker;
@@ -14,13 +12,8 @@ import java.util.random.RandomGenerator;
 public class Task {
 
     private String id;  // unique identifier
-
-    @NotBlank(message = "Description value cannot be blank")
     private String description;
-
-    @Pattern(regexp = "^(Low|Medium|High)$", message="Priority must be Low, Medium, or High")
     private String priority;    // Low, Medium, High
-
     private boolean done;
 
     // Copy constructor
