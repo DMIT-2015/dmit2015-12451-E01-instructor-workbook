@@ -1,5 +1,7 @@
 package dmit2015.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -13,8 +15,10 @@ import java.util.UUID;
 
 @Data
 @NoArgsConstructor
+@Entity
 public class WeatherForecast {
 
+    @Id
     private String id;
 
     @NotBlank(message = "City value cannot be blank")

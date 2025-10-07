@@ -1,5 +1,8 @@
 package dmit2015.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
@@ -11,8 +14,11 @@ import java.util.random.RandomGenerator;
 
 @Data
 @NoArgsConstructor
+@Entity
 public class Task {
 
+    @Id
+    @Column(name="taskid",unique = true, nullable = false)
     private String id;  // unique identifier
 
     @NotBlank(message = "Description value cannot be blank")
