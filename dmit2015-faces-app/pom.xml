@@ -165,6 +165,31 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.4.0</version>
             </plugin>
+
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>5.1.4.Final</version>
+                <configuration>
+                    <feature-packs>
+                        <feature-pack>
+                            <location>wildfly@maven(org.jboss.universe:community-universe)#37.0.1.Final</location>
+                        </feature-pack>
+                    </feature-packs>
+                    <!-- deploys the app on root web context -->
+                    <name>ROOT.war</name>
+                    <!-- Enable debugging -->
+                    <!-- https://www.jetbrains.com/help/idea/attaching-to-local-process.html#attach-to-local -->
+                    <!-- To attach a debugger to the running server from IntelliJ IDEA
+                        1. From the main menu, choose `Run | Attach to Process`
+                        2. IntelliJ IDEA will show the list of running local processes.
+                            Select the process with the `jboss-module.jar (8787)` name to attach to.
+                    -->
+                    <debug>true</debug>
+                    <debugPort>8787</debugPort>
+                    <debugSuspend>false</debugSuspend>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
