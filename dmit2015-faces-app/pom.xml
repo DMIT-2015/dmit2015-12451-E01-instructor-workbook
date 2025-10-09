@@ -18,13 +18,20 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging</artifactId>
+            <version>3.6.1.Final</version>
+        </dependency>
+
         <!-- https://balusc.omnifaces.org/2013/10/how-to-install-cdi-in-tomcat.html -->
         <!-- CDI implementation (Weld) for Apache Tomcat 11 -->
-<!--        <dependency>-->
-<!--            <groupId>org.jboss.weld.servlet</groupId>-->
-<!--            <artifactId>weld-servlet-shaded</artifactId>-->
-<!--            <version>6.0.3.Final</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.jboss.weld.servlet</groupId>-->
+        <!--            <artifactId>weld-servlet-shaded</artifactId>-->
+        <!--            <version>6.0.3.Final</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-web-api</artifactId>
