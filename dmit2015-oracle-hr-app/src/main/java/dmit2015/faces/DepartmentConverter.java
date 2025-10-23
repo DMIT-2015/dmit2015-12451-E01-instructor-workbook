@@ -22,10 +22,10 @@ public class DepartmentConverter implements Converter<Department> {
     private HumanResourcesRepository hrRepository;
 
     @Override
-    public Department getAsObject(FacesContext facesContext, UIComponent uiComponent, String s) {
-        if (s != null && !s.isBlank()) {
+    public Department getAsObject(FacesContext facesContext, UIComponent uiComponent, String value) {
+        if (value != null && !value.isBlank()) {
             try {
-                Short departmentId = Short.parseShort(s);
+                Short departmentId = Short.parseShort(value);
                 return hrRepository.departmentById(departmentId);
             }  catch (NumberFormatException e) {
                 throw new ConverterException(new FacesMessage(e.getMessage()));
@@ -35,9 +35,9 @@ public class DepartmentConverter implements Converter<Department> {
     }
 
     @Override
-    public String getAsString(FacesContext facesContext, UIComponent uiComponent, Department department) {
-        if (department != null) {
-            return department.getId().toString();
+    public String getAsString(FacesContext facesContext, UIComponent uiComponent, Department value) {
+        if (value != null) {
+            return value.getId().toString();
         }
         return "";
     }
