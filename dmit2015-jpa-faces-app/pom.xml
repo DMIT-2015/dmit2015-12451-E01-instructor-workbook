@@ -236,6 +236,9 @@
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>5.1.4.Final</version>
                 <configuration>
+                    <scripts>
+                        <script>./wildfly-scripts/configure-elytron.cli</script>
+                    </scripts>
                     <feature-packs>
                         <feature-pack>
                             <location>wildfly@maven(org.jboss.universe:community-universe)#37.0.1.Final</location>
