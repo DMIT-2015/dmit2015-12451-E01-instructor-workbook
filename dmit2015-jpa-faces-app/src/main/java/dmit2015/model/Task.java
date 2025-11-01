@@ -1,16 +1,16 @@
 package dmit2015.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.Setter;
 import net.datafaker.Faker;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.*;
-import java.util.logging.Level;
+import java.util.Objects;
+import java.util.UUID;
 import java.util.logging.Logger;
 import java.util.random.RandomGenerator;
 
@@ -29,6 +29,9 @@ import java.util.random.RandomGenerator;
 public class Task implements Serializable {
 
     private static final Logger logger = Logger.getLogger(Task.class.getName());
+
+    @Column(length=32, nullable = false)
+    private String username;
 
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
