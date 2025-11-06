@@ -2,7 +2,6 @@ package dmit2015.faces;
 
 import dmit2015.model.Task;
 import dmit2015.service.TaskService;
-import jakarta.annotation.PostConstruct;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -58,12 +57,12 @@ public class TaskCrudView implements Serializable {
      * <f:event type="postInvokeAction" listener="#{currentBeanView.init}" />
      * </f:metadata>
      */
-    @PostConstruct
+//    @PostConstruct
     public void init() {
         try {
             tasks = taskService.getAllTasks();
         } catch (Exception e) {
-            Messages.addGlobalError("Error getting tasks %s", e.getMessage());
+            Messages.addGlobalError("Error getting tasks {0}", e.getMessage());
         }
     }
 
