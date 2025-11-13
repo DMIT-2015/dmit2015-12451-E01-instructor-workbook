@@ -21,6 +21,11 @@
 
     <ui:define name="maincontent">
 
+        <f:metadata>
+            <f:viewParam name="dummy" />
+            <f:event type="postInvokeAction" listener="#{currentTaskCrudView.init}" />
+        </f:metadata>
+
         <div class="card">
             <h:form id="form">
                 <p:growl id="growl" showDetail="true">

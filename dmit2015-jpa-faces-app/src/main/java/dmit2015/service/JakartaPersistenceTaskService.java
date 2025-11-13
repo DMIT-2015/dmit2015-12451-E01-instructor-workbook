@@ -104,6 +104,7 @@ public class JakartaPersistenceTaskService implements TaskService {
         Optional<Task> optionalTask = getTaskById(id);
         if (optionalTask.isPresent()) {
             Task task = optionalTask.orElseThrow();
+            // Authenticate users can only their own records
             String username = _securityContext.getCallerPrincipal().getName();
             if (!task.getUsername().equals(username)) {
                 throw new SecurityException("Access denied. You cannot delete data owned another user.");
